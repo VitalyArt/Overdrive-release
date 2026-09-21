@@ -110,6 +110,12 @@ public final class KeymapApiHandler {
     // process so AMS re-binds into a new one (a toggle of the Secure setting does
     // NOT un-wedge it — verified on-device).
     //
+    // WHY the toggle does not help, and the restart does: BYD's start gate refuses
+    // the system's bind for a third-party app whose uid is marked blocked while its
+    // process is not running, and it is consulted from bindServiceLocked. A settings
+    // toggle does not create a process; a restart does. See
+    // BYD_ACCESSIBILITY_BIND_GATE_DISCOVERY.md.
+    //
     // This daemon runs as UID 2000, a DIFFERENT uid than the app, so it survives
     // `am force-stop com.overdrive.app` (same reason SocCutoffMonitor pkills the
     // daemon separately). That makes it the stable supervisor: it periodically
@@ -296,6 +302,11 @@ public final class KeymapApiHandler {
      * an explicit component start then clears that flag and spawns a fresh
      * process, on whose startup AMS re-binds the (still-enabled) accessibility
      * service — the clean bind we verified a fresh process always gets.
+     *
+     * The mechanism behind "a fresh process always binds" is BYD's start gate:
+     * ActivityManagerService.isTargetAppEnabledStartedBy3rd permits the bind when
+     * isAppRunning(uid) is true, so the relaunch satisfies the gate rather than
+     * clearing anything in AMS. See BYD_ACCESSIBILITY_BIND_GATE_DISCOVERY.md.
      *
      * We respawn via the keep-alive foreground service (NOT MainActivity) so the
      * UI isn't pulled to the foreground mid-drive; OverdriveApplication.onCreate
