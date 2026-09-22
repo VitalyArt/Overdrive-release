@@ -300,8 +300,9 @@ public final class KeymapApiHandler {
      * Kill the wedged app process and respawn it headlessly. `am force-stop`
      * clears the wedged ServiceRecord and puts the package in the stopped state;
      * an explicit component start then clears that flag and spawns a fresh
-     * process, on whose startup AMS re-binds the (still-enabled) accessibility
-     * service — the clean bind we verified a fresh process always gets.
+     * process. App startup re-asserts the accessibility settings, after which
+     * AMS binds the service into the live process — the clean bind we verified
+     * a fresh process always gets.
      *
      * The mechanism behind "a fresh process always binds" is BYD's start gate:
      * ActivityManagerService.isTargetAppEnabledStartedBy3rd permits the bind when
