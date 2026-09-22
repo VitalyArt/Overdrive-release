@@ -71,6 +71,11 @@
     <string name="tailscale_qr_waiting">ממתין לכתובת התחברות…</string>
     <string name="tailscale_enable_proxy">הפעל פרוקסי של Tailscale</string>
     <string name="tailscale_proxy_explainer">מנתב את תעבורת ה-MQTT דרך Tailscale כדי שתוכל להגיע ל-broker פרטי ברשת ה-tailnet שלך ללא הפניית פורטים.</string>
+    <string name="tailscale_enable_https">הצגת ממשק האינטרנט דרך HTTPS ב־Tailscale</string>
+    <string name="tailscale_https_explainer">מפרסם את יחידת המולטימדיה הזו בכתובת https://&lt;name&gt;.ts.net עם אישור אמיתי, כך שדפדפנים מתייחסים אליה כמקור מאובטח. התראות דחיפה, שמע בתא הנוסעים, התקנה כאפליקציה ומפענח המצלמה המהיר יותר דורשים כולם חיבור כזה. נדרש להפעיל MagicDNS ואישורי HTTPS עבור ה־tailnet שלך.</string>
+    <string name="toast_tailscale_https_enabled">ממשק האינטרנט מוצג דרך HTTPS ב־tailnet</string>
+    <string name="toast_tailscale_https_disabled">הצגה דרך HTTPS הושבתה</string>
+    <string name="toast_tailscale_https_save_failed">לא ניתן לשנות את הגדרת HTTPS. ודא שאישורי HTTPS מופעלים עבור ה־tailnet שלך.</string>
     <string name="tailscale_enable_adb">אפשר ADB מרוחק דרך Tailscale</string>
     <string name="tailscale_adb_explainer">מוסיף גישת tailnet עבור ADB (ולא לאינטרנט הציבורי). כל מכשיר tailnet עם מפתח ADB מורשה יקבל גישת shell מלאה למסך המולטימדיה הזה. שים לב ש-ADB כבר מקבל חיבורים מהרשת המקומית — כיבוי אפשרות זו אינו סוגר גישה זו.</string>
     <string name="tailscale_adb_endpoint">adb connect %1$s</string>

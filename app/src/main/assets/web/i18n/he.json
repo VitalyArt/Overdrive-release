@@ -3126,7 +3126,8 @@
     "tier_gold": "זהב",
     "tier_platinum": "פלטינה",
     "tier_silver": "כסף",
-    "tiers_explainer": "יהלום, פלטינה, זהב, כסף וארד מציינים את סך התרומה המצטברת; ×N מציין כמה פעמים נפרדות נתרמה תמיכה."
+    "tiers_explainer": "יהלום, פלטינה, זהב, כסף וארד מציינים את סך התרומה המצטברת; ×N מציין כמה פעמים נפרדות נתרמה תמיכה.",
+    "ack_chimes": "צלילי אזהרה של RoadSense — צלילים מ-Google Sound Library, ברישיון"
   },
   "byd_cloud": {
     "page_title": "BYD Cloud",
