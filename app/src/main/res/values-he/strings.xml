@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">OverDrive</string>
     <string name="accessibility_service_description">שומר על ניטור הרכב של Overdrive פעיל ברקע. שירות זה אינו קורא תוכן מהמסך ואינו מקיים איתו אינטראקציה.</string>
@@ -71,11 +71,6 @@
     <string name="tailscale_qr_waiting">ממתין לכתובת התחברות…</string>
     <string name="tailscale_enable_proxy">הפעל פרוקסי של Tailscale</string>
     <string name="tailscale_proxy_explainer">מנתב את תעבורת ה-MQTT דרך Tailscale כדי שתוכל להגיע ל-broker פרטי ברשת ה-tailnet שלך ללא הפניית פורטים.</string>
-    <string name="tailscale_enable_https">הצגת ממשק האינטרנט דרך HTTPS ב־Tailscale</string>
-    <string name="tailscale_https_explainer">מפרסם את יחידת המולטימדיה הזו בכתובת https://&lt;name&gt;.ts.net עם אישור אמיתי, כך שדפדפנים מתייחסים אליה כמקור מאובטח. התראות דחיפה, שמע בתא הנוסעים, התקנה כאפליקציה ומפענח המצלמה המהיר יותר דורשים כולם חיבור כזה. נדרש להפעיל MagicDNS ואישורי HTTPS עבור ה־tailnet שלך.</string>
-    <string name="toast_tailscale_https_enabled">ממשק האינטרנט מוצג דרך HTTPS ב־tailnet</string>
-    <string name="toast_tailscale_https_disabled">הצגה דרך HTTPS הושבתה</string>
-    <string name="toast_tailscale_https_save_failed">לא ניתן לשנות את הגדרת HTTPS. ודא שאישורי HTTPS מופעלים עבור ה־tailnet שלך.</string>
     <string name="tailscale_enable_adb">אפשר ADB מרוחק דרך Tailscale</string>
     <string name="tailscale_adb_explainer">מוסיף גישת tailnet עבור ADB (ולא לאינטרנט הציבורי). כל מכשיר tailnet עם מפתח ADB מורשה יקבל גישת shell מלאה למסך המולטימדיה הזה. שים לב ש-ADB כבר מקבל חיבורים מהרשת המקומית — כיבוי אפשרות זו אינו סוגר גישה זו.</string>
     <string name="tailscale_adb_endpoint">adb connect %1$s</string>
@@ -85,7 +80,7 @@
     <string name="toast_tailscale_adb_save_failed">שינוי הגדרת ADB מרוחק נכשל</string>
     <string name="tailscale_proxy_warning">כאשר מופעל, חיבורי MQTT ל-brokers ציבוריים (HiveMQ, AWS IoT וכו\') ייכשלו — Tailscale מנתב אך ורק לרשת ה-tailnet שלך. שמירה תפעיל מחדש את תהליך הרקע.</string>
     <string name="camera_mode_title">מצב קליטת וידאו</string>
-    <string name="camera_mode_subtitle">בחר את הנתיב המתאים למסך המולטימדיה שלך. \'ברירת מחדל\' מתאים למצלמות פנורמיות ישנות יותר; DiLink 4 משתמש ישירות בפלט ה-SurfaceTexture הטבעי של ה-AVM HAL.</string>
+    <string name="camera_mode_subtitle">בחר את הנתיב שמתאים ליחידת הראש. ברירת המחדל מתאימה למצלמות פנורמיות ישנות; DiLink 4 צורך את פלט SurfaceTexture המקורי של ה-AVM HAL.</string>
     <string name="camera_mode_option_default">ברירת מחדל — פועל ב-Seal, Atto, Dolphin (במרבית הרכבים)</string>
     <string name="camera_mode_option_dilink4">DiLink 4 — גרסאות חדשות יותר של Han / Tang</string>
     <string name="camera_mode_current_default">נוכחי: ברירת מחדל</string>
@@ -225,7 +220,7 @@
     <string name="onboarding_camera_windshield_primary">הראה לי</string>
     <string name="onboarding_camera_windshield_skip">לא תודה</string>
     <string name="onboarding_vehicle_title">הגדר ל-Overdrive את נתוני הסוללה שלך</string>
-    <string name="onboarding_vehicle_body">בחר את דגם הרכב ואנו נמלא את ערך הקוט\"ש, או הזן אותו בעצמך (15–120). נתון זה מבטיח הערכות טווח וטעינה מדויקות. תוכל לדלג ולהגדיר זאת מאוחר יותר.</string>
+    <string name="onboarding_vehicle_body">בחר דגם ואנחנו ממלאים את ה-kWh, או הקלד בעצמך (15–120). זה עושה את הטווח והטעינה מדויקים. אפשר לדלג ולהגדיר אחר כך.</string>
     <string name="onboarding_vehicle_primary">הגדר סוללה</string>
     <string name="onboarding_dash_tiles_title">סביבת הנהג שלך במבט חטוף</string>
     <string name="onboarding_dash_tiles_body">כרטיסים אלה הם לחצנים — הקש כדי לפתוח מצלמות בשידור חי, הקלטות, שירותים או את נתוני הרכב שלך.</string>
@@ -331,6 +326,8 @@
     <string name="recording_lib_filter_sheet_title">סנן הקלטות</string>
     <string name="recording_lib_filter_apply">החל</string>
     <string name="recording_lib_filter_reset">אפס</string>
+    <string name="recording_lib_chip_parking_session">חניה זו</string>
+    <string name="recording_lib_chip_parking_session_at">חניה %1$s</string>
     <string name="recording_lib_filter_section_what">מה זוהה</string>
     <string name="recording_lib_filter_section_severity">חומרה</string>
     <string name="recording_lib_filter_section_type">סוג</string>
@@ -383,9 +380,9 @@
     <string name="daemons_hero_title">שירותי רקע</string>
     <string name="daemons_count_pending">טוען שירותים…</string>
     <string name="daemons_count_fmt">%1$d מתוך %2$d פועלים</string>
-    <string name="daemons_wifi_auto_enable_title">הפעלת Wi&amp;#8209;Fi אוטומטית</string>
-    <string name="daemons_wifi_auto_enable_subtitle">‏OverDrive מפעילה מחדש את ה-Wi&amp;#8209;Fi בזמן חניה ובעת הפעלת שירותי רקע. כבה הגדרה זו כדי להשאיר את מצב ה-Wi&amp;#8209;Fi בשליטת הרכב.</string>
-    <string name="daemons_wifi_auto_enable_save_failed">לא ניתן לשמור את הגדרת ההפעלה האוטומטית של ה-Wi&amp;#8209;Fi.</string>
+    <string name="daemons_wifi_auto_enable_title">הפעל WiFi אוטומטית</string>
+    <string name="daemons_wifi_auto_enable_subtitle">OverDrive משחזר WiFi בחניה וכששירותי רקע עולים. כבה כדי להשאיר את מצב ה-WiFi תחת שליטת הרכב.</string>
+    <string name="daemons_wifi_auto_enable_save_failed">לא ניתן לשמור את הגדרת הפעלת ה-WiFi האוטומטית.</string>
     <string name="update_preparing">מכין עדכון…</string>
     <string name="update_percent_zero">0%</string>
     <string name="battery_health_title">בריאות הסוללה</string>
@@ -674,6 +671,7 @@
     <string name="rail_vehicle">רכב</string>
     <string name="rail_projection">שיקוף</string>
     <string name="rail_trips">נסיעות</string>
+    <string name="rail_parking">חניה</string>
     <string name="rail_charging">טעינה</string>
     <string name="rail_automations">אוטומציות</string>
     <string name="rail_key_mapping">מיפוי מקשים</string>
@@ -961,7 +959,7 @@
     <string name="vehicle_dialog_title">הגדרת קיבולת סוללה</string>
     <string name="vehicle_dialog_capacity_label">קיבולת</string>
     <string name="vehicle_dialog_capacity_suffix">קוט\"ש</string>
-    <string name="vehicle_dialog_capacity_helper">15 עד 120 קוט\"ש. השאר ריק לברירת המחדל של הדגם.</string>
+    <string name="vehicle_dialog_capacity_helper">15 עד 120 kWh. השאר לשימוש בברירת המחדל של הדגם.</string>
     <string name="vehicle_dialog_model_label">דגם</string>
     <string name="vehicle_model_seagull">BYD Seagull</string>
     <string name="vehicle_dialog_save">שמור</string>
@@ -969,7 +967,7 @@
     <string name="vehicle_dialog_detection">זיהוי: %1$s</string>
     <string name="vehicle_dialog_detection_auto">אוטומטי</string>
     <string name="vehicle_dialog_detection_manual">ידני</string>
-    <string name="vehicle_dialog_invalid_capacity">הקיבולת חייבת להיות בין 15 ל-120 קוט\"ש</string>
+    <string name="vehicle_dialog_invalid_capacity">הקיבולת חייבת להיות 15 - 120 kWh</string>
     <string name="vehicle_dialog_summary_effective">בפועל: %1$.1f קוט\"ש</string>
     <string name="vehicle_dialog_summary_calibration">כיול אחרון: %1$.1f%% ב-%2$s</string>
     <string name="vehicle_dialog_soh_unavailable">לא זמין</string>
@@ -1386,6 +1384,36 @@
     <string name="network_warn_body">במסך הרכב קיים רכיב אלחוטי יחיד, ולכן הוא אינו יכול לשמש כנקודה חמה ולהישאר מחובר לרשת Wi-Fi בו-זמנית. כאשר הנקודה החמה מופעלת, הרכב מתנתק מה-Wi-Fi ומשתמש בנתונים הסלולריים של כרטיס ה-SIM המובנה עבורו ועבור כל המכשירים המחוברים. חיבור ה-Wi-Fi ישוב לפעול עם כיבוי הנקודה החמה.</string>
     <string name="network_warn_continue">הפעל נקודה חמה</string>
     <string name="network_warn_cancel">ביטול</string>
+    <!-- Closed-repository features added after the upstream Hebrew pass. -->
+    <string name="action_create_evidence_pack">יצירת חבילת ראיות</string>
+    <string name="action_share_evidence_pack">שיתוף חבילת ראיות</string>
+    <string name="tailscale_enable_https">הצגת ממשק האינטרנט דרך HTTPS</string>
+    <string name="tailscale_https_explainer">פרסום לוח הבקרה רק ב־tailnet שלך, בכתובת מהימנה מסוג https://…ts.net. יש להפעיל מראש MagicDNS ואישורי HTTPS במסוף הניהול של Tailscale.</string>
+    <string name="toast_tailscale_https_enabled">HTTPS ב־tailnet הופעל</string>
+    <string name="toast_tailscale_https_disabled">HTTPS ב־tailnet הושבת</string>
+    <string name="toast_tailscale_https_save_failed">לא ניתן לשנות את הגדרת HTTPS. הפעל והתחבר ל־Tailscale, הפעל MagicDNS ואישורי HTTPS, וודא שאין כלל Serve אחר המשתמש ביציאה 443.</string>
+    <string name="camera_mode_option_dilink5">DiLink 5 — Sealion 7 / SA8155P</string>
+    <string name="camera_mode_current_dilink5">נוכחי: DiLink 5</string>
+    <string name="camera_dilink5_mapping_title">סדר המצלמות של DiLink 5</string>
+    <string name="camera_dilink5_mapping_subtitle">מזהי המצלמות הפיזיות מוצגים בסדר קדמית, ימנית, אחורית, שמאלית. השאר על אוטומטי אלא אם התצוגות הגולמיות מוכיחות שהרכב משתמש בסדר אחר.</string>
+    <string name="camera_dilink5_mapping_current_auto">נוכחי: אוטומטי / ברירת המחדל של הדגם</string>
+    <string name="camera_dilink5_mapping_current_format">נוכחי: %1$s</string>
+    <string name="camera_dilink5_mapping_auto">אוטומטי — ברירת המחדל של הדגם</string>
+    <string name="camera_dilink5_mapping_standard">רגיל — 0,1,2,3</string>
+    <string name="camera_dilink5_mapping_opposite">החלפת קדמית/אחורית + שמאלית/ימנית — 2,3,0,1</string>
+    <string name="camera_dilink5_mapping_shark">Shark / DMO — 8,9,5,4</string>
+    <string name="camera_dilink5_mapping_hint">אפשרות הזוגות ההפוכים היא רק מועמדת לתסמין שדווח; בדוק את כל ארבע התצוגות לפני ההחלה. השמירה מפעילה מחדש את דמון המצלמה.</string>
+    <string name="camera_dilink5_mapping_unchanged">סדר המצלמות כבר נבחר.</string>
+    <string name="camera_decoupled_lane_label">צינור קידוד מנותק (תיקון למצלמת הנסיעה לאחור)</string>
+    <string name="camera_decoupled_lane_subtitle">מעתיק כל פריים מהמצלמה לפני הקידוד, כך שעצירה בהקלטה לא תוכל למנוע תצוגה ממצלמת הנסיעה לאחור של הרכב. זמין רק במצב המצלמה הישן; צורך כ־60 MB מזיכרון ה־GPU ומעבר GPU נוסף לכל פריים. נכנס לתוקף בהפעלה הבאה של המצלמה (מחזור ACC או הפעלה מחדש של הדמון).</string>
+    <string name="dialog_create_evidence_pack_title">ליצור חבילת ראיות?</string>
+    <string name="dialog_create_evidence_pack_message">OverDrive שולח לספק ה־AI שהוגדר רק מטא־נתונים מסוננים של האירוע. הסרטון נשאר מקומי ומתווסף רק לחבילת הראיות שמורדת.</string>
+    <string name="toast_evidence_pack_creating">יוצר חבילת ראיות…</string>
+    <string name="toast_evidence_pack_ready">חבילת הראיות מוכנה</string>
+    <string name="toast_evidence_pack_unavailable">ההקלטה עדיין לא נוספה לאינדקס</string>
+    <string name="toast_evidence_pack_failed">לא ניתן ליצור חבילת ראיות: %1$s</string>
+    <string name="error_unknown">שגיאה לא ידועה</string>
+    <string name="projection_dilink5_mode_required">הגדר את מצב הרכב ל־DiLink 5 באבחון, ולאחר מכן הפעל מחדש את שירות המצלמה.</string>
 
     <string name="roi_tap_to_add_points">הקש להוספת נקודות (%1$d-%2$d)</string>
 </resources>

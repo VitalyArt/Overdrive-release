@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title data-i18n="remote_dev.page_title">Remote Dev View</title>
     <link rel="icon" type="image/webp" href="../shared/app-icon-dark.webp">
-    <script src="../shared/theme.js?v=6"></script>
-    <script src="../shared/app-shell.js?v=3"></script>
-    <link rel="stylesheet" href="../shared/styles.css?v=21">
+    <script src="../shared/theme.js?v=8"></script>
+    <script src="../shared/app-shell.js?v=7"></script>
+    <link rel="stylesheet" href="../shared/styles.css?v=34">
     <style>
         .dev-view-page { width: 100%; max-width: 1600px; margin: 0 auto; padding: 20px; box-sizing: border-box; }
         .dev-view-header { margin-bottom: 14px; }
@@ -113,6 +113,7 @@
                             <span id="activityState">Activity --</span>
                         </div>
                         <div class="button-row">
+                            <button id="backButton" class="dev-button compact" disabled>Back</button>
                             <button id="fullscreenButton" class="dev-button compact" disabled>Fullscreen</button>
                             <button id="keyboardButton" class="dev-button compact" disabled>Keyboard</button>
                             <button id="screenshotButton" class="dev-button compact" disabled>Screenshot</button>
@@ -127,8 +128,15 @@
     </main>
 </div>
 
-<script src="../shared/core.js?v=20"></script>
 <script src="../shared/auth.js"></script>
-<script src="../shared/remote-dev-view.js?v=10"></script>
+<script src="../shared/core.js?v=20"></script>
+<script src="../shared/remote-dev-view.js?v=11"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        BYD.i18n.init().then(function () {
+            BYD.core.init();
+        });
+    });
+</script>
 </body>
 </html>

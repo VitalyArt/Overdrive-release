@@ -1088,12 +1088,7 @@
     "mqtt_channel": "频道",
     "mqtt_value": "值",
     "wait_until_description": "暂停其余动作，直到选定的信号符合比较或超时。例如：等待到 Speed = 0 后关闭窗口。",
-    "wait_until_state_description": "暂停其余动作，直到选定的一个/关闭信号到达一个状态或超时。例如：等待直到Indicator=关闭才继续。",
-      "wait_timeout": "超时(秒)",
-      "save_seat_position": "保存座位位置",
-      "save_seat_position_description": "将当前司机座位存储到内存栏位中。",
-      "set_seat_position": "控制座椅位置",
-      "set_seat_position_description": "加载一个座位内存位置。确保内存先从车上保存。 这种控制在车辆关闭时不可用。"
+    "wait_until_state_description": "暂停其余动作，直到选定的一个/关闭信号到达一个状态或超时。例如：等待直到Indicator=关闭才继续。"
   },
   "messages": {
     "logged_out": "登录出来",

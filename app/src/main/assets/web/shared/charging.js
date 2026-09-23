@@ -180,6 +180,15 @@ var CHARGING = {
         this._showSkeleton();
         setTimeout(function () { self._syncTabPresentation(); }, 0);
         this._restartVisibleRefresh(true);
+        try {
+            var deepLinkId =
+                new URLSearchParams(window.location.search).get('id');
+            if (deepLinkId && /^\d+$/.test(deepLinkId)) {
+                setTimeout(function () {
+                    self.showDetail(Number(deepLinkId));
+                }, 0);
+            }
+        } catch (e) {}
     },
 
     _syncTabPresentation: function (activeId) {
@@ -1720,7 +1729,7 @@ var CHARGING = {
         this._setText('detailChartSoc', socText);
         var socCaption = chargingNow
             ? this._t('charge.detail_start_now', 'Start → Now')
-            : this._t('charge.detail_start_end', 'Start -> End');
+            : this._t('charge.detail_start_end', 'Start → End');
         this._setText('detailSocCaption', socCaption);
         this._setText('detailChartSocLabel', socCaption);
         var fillSoc = s.endSoc != null

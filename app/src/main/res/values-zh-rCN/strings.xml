@@ -239,7 +239,7 @@
     <string name="onboarding_camera_windshield_skip">不要谢谢。</string>
     <!-- Vehicle profile chapter -->
     <string name="onboarding_vehicle_title">告诉 Overdrive 您的电池信息</string>
-    <string name="onboarding_vehicle_body">选择您的模型，我们填充了 kWh，或者输入自己(15-120)。 这使得范围和充电估计准确。您可以跳过并稍后设置。</string>
+    <string name="onboarding_vehicle_body">选择您的模型，我们填充了 kWh，或者输入自己(5-120)。 这使得范围和充电估计准确。您可以跳过并稍后设置。</string>
     <string name="onboarding_vehicle_primary">设置电池</string>
     <!-- Dashboard orientation chapter -->
     <string name="onboarding_dash_tiles_title">你的鸡蛋一眼！</string>
@@ -735,6 +735,7 @@
     <string name="rail_vehicle">车辆</string>
     <string name="rail_projection">投影图</string>
     <string name="rail_trips">行程</string>
+    <string name="rail_parking">停车</string>
     <string name="rail_charging">正在充电</string>
     <string name="rail_automations">自动化</string>
     <string name="rail_key_mapping">按键映射</string>
@@ -903,7 +904,6 @@
          greeting) — pairs with the OVERDRIVE overline above and the live
          status row of chips below. Locale catalogs auto-translate. -->
     <string name="dashboard_hero_headline">守望中</string>
-    <string name="dashboard_modern_vehicle_status">车辆状态</string>
     <string name="dashboard_subtitle_all_systems">所有系统在线</string>
     <string name="dashboard_subtitle_some_offline">在线提供%1$d的%2$d服务</string>
     <string name="dashboard_subtitle_no_tunnel">离线远程访问</string>
@@ -923,14 +923,11 @@
     <string name="vehicle_dialog_title">设置电池容量</string>
     <string name="vehicle_dialog_capacity_label">产能 (kWh)</string>
     <string name="vehicle_dialog_capacity_suffix">kWh</string>
-    <string name="vehicle_dialog_capacity_helper">15至120 kWh。保留以使用模型默认值。</string>
+    <string name="vehicle_dialog_capacity_helper">5至120 kWh。保留以使用模型默认值。</string>
     <string name="vehicle_dialog_model_label">模型</string>
     <string name="vehicle_dialog_save">保存</string>
     <string name="vehicle_dialog_reset">重新设置为自动检测</string>
-    <string name="vehicle_dialog_detection">检测：%1$s</string>
-    <string name="vehicle_dialog_detection_auto">自动</string>
-    <string name="vehicle_dialog_detection_manual">手动</string>
-    <string name="vehicle_dialog_invalid_capacity">容量必须为15-120kWh</string>
+    <string name="vehicle_dialog_invalid_capacity">容量必须为5-120kWh</string>
     <string name="vehicle_dialog_summary_effective">有效:%1$.1f kWh</string>
     <string name="vehicle_dialog_summary_calibration">最后校准:%1$.1f%% 在%2$s</string>
     <string name="vehicle_dialog_soh_unavailable">无法使用</string>
@@ -1360,6 +1357,10 @@
     <string name="projection_preset_right">右半部</string>
     <string name="projection_preset_center">居中</string>
     <string name="projection_lock_aspect">保留集群视图</string>
+    <string name="dashboard_modern_vehicle_status">车辆状态</string>
+    <string name="vehicle_dialog_detection">检测：%1$s</string>
+    <string name="vehicle_dialog_detection_auto">自动</string>
+    <string name="vehicle_dialog_detection_manual">手动</string>
     <!-- Rail category headers -->
     <string name="rail_section_cameras">摄像头</string>
     <string name="rail_section_controls">控制</string>

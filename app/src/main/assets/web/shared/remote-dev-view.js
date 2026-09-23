@@ -34,6 +34,7 @@
     var startButton = document.getElementById('startButton');
     var stopButton = document.getElementById('stopButton');
     var refreshButton = document.getElementById('refreshButton');
+    var backButton = document.getElementById('backButton');
     var fullscreenButton = document.getElementById('fullscreenButton');
     var fullscreenBackButton = document.getElementById('fullscreenBackButton');
     var fullscreenKeyboardButton = document.getElementById('fullscreenKeyboardButton');
@@ -76,9 +77,12 @@
     function setRunning(running) {
         stopped = !running;
         startButton.disabled = running;
-        startButton.textContent = running ? t('remote_dev.session_active', 'Session active') : t('remote_dev.start_session', 'Start session');
+        startButton.textContent = running
+            ? t('remote_dev.session_active', 'Session active')
+            : t('remote_dev.start_session', 'Start session');
         stopButton.disabled = !running;
         refreshButton.disabled = !running;
+        backButton.disabled = !running;
         fullscreenButton.disabled = !running;
         fullscreenBackButton.disabled = !running;
         keyboardButton.disabled = !running;
@@ -385,7 +389,7 @@
             var elapsed = frameTimes[frameTimes.length - 1] - frameTimes[0];
             if (elapsed > 0) {
                 var fps = (frameTimes.length - 1) * 1000 / elapsed;
-                connectionState.textContent = t('remote_dev.live_stream', 'Live stream') + ' · ' + fps.toFixed(1) + ' fps';
+                connectionState.textContent = t('remote_dev.live', 'Live') + ' · ' + fps.toFixed(1) + ' fps';
             }
         }
     }
@@ -725,6 +729,9 @@
     startButton.addEventListener('click', startSession);
     stopButton.addEventListener('click', function () { endSession(false); });
     fullscreenStopButton.addEventListener('click', function () { endSession(false); });
+    backButton.addEventListener('click', function () {
+        sendInput({ type: 'key', key: 'back' });
+    });
     fullscreenButton.addEventListener('click', toggleFullscreen);
     screenshotButton.addEventListener('click', captureScreenshot);
     fullscreenScreenshotButton.addEventListener('click', captureScreenshot);

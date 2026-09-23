@@ -59,7 +59,7 @@ const BYD = {
         },
 
         async stopCamera(camId) {
-            return this.get(`/api/stop/${camId}`);
+            return this.get('/api/stopall');
         },
 
         async stopAll() {

@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title data-i18n="app.assistant_title">Assistant - OverDrive</title>
     <link rel="icon" type="image/webp" href="../shared/app-icon-dark.webp">
-    <script src="../shared/theme.js?v=6"></script>
-    <script src="../shared/app-shell.js?v=6"></script>
+    <script src="../shared/theme.js?v=8"></script>
+    <script src="../shared/app-shell.js?v=7"></script>
     <script>
         window.OT_TABS = [
             { id: 'assistant', label: 'Assistant', i18n: 'genai.tab_assistant', svg: '<path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>' },
@@ -19,7 +19,7 @@
         };
     </script>
     <script src="../shared/app-tabs.js"></script>
-    <link rel="stylesheet" href="../shared/styles.css?v=24">
+    <link rel="stylesheet" href="../shared/styles.css?v=34">
     <style>
         .ai-state {
             display: grid; grid-template-columns: 34px minmax(0, 1fr) auto;
@@ -145,12 +145,25 @@
             font-size: 11px; line-height: 1.35;
         }
         .ai-community-results { margin-top: 8px; }
+        .ai-local-grid {
+            display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+            align-items: start; gap: 12px; margin-bottom: 12px;
+        }
+        .ai-local-list {
+            display: flex; flex-direction: column; gap: 8px;
+            color: var(--text-secondary); font-size: 12px;
+        }
+        .ai-local-list .ai-result-card { margin-top: 0; }
 
         .ai-insight-grid {
             display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
-            align-items: start; gap: 12px; margin-top: 12px;
+            align-items: start; align-content: start;
+            gap: 12px; margin-top: 12px;
         }
-        .ai-insight-grid > .card + .card { margin-top: 0; }
+        .ai-insight-card {
+            align-self: start;
+            margin: 0 !important;
+        }
         .ai-insight-controls {
             display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
             gap: 12px;
@@ -225,6 +238,7 @@
         .ai-privacy-list { margin: 0; padding-left: 20px; color: var(--text-secondary); }
         .ai-privacy-list li { margin: 9px 0; line-height: 1.5; font-size: 13px; }
         @media (max-width: 1100px) {
+            .ai-local-grid { grid-template-columns: 1fr; }
             .ai-insight-grid { grid-template-columns: 1fr; }
         }
         @media (max-width: 900px) {
@@ -342,7 +356,33 @@
                         </div>
                     </div>
 
+                    <div class="ai-local-grid">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="3"/></svg>
+                                    <span>Routine suggestions</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="ai-local-list" id="genAiRoutineSuggestions">Loading local routine learner…</div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h6"/></svg>
+                                    <span>Incident evidence packs</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="ai-local-list" id="genAiIncidentPacks">Create a pack from a recording on the Events page.</div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="ai-quick-actions" aria-label="Grounded assistant actions">
+                        <button class="ai-chip" type="button" data-mode="vehicle_history" data-i18n="genai.chip_vehicle_history" data-prompt="Find ">Search vehicle history</button>
                         <button class="ai-chip" type="button" data-mode="current_vehicle" data-i18n="genai.chip_current_vehicle" data-prompt="Explain the current vehicle state and call out anything unusual.">Current vehicle</button>
                         <button class="ai-chip" type="button" data-mode="latest_trip" data-i18n="genai.chip_latest_trip" data-prompt="Explain my latest trip, including efficiency and notable moments.">Explain latest trip</button>
                         <button class="ai-chip" type="button" data-mode="trip_comparison" data-i18n="genai.chip_more_battery" data-prompt="Why did my latest trip use more battery than comparable trips?">Why more battery?</button>
@@ -384,7 +424,7 @@
 
                 <section data-tab="assistant">
                     <div class="ai-insight-grid">
-                        <div class="card">
+                        <div class="card ai-insight-card">
                             <div class="card-header">
                                 <div class="card-title">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M3 12h18"/><path d="m5 5 14 14"/></svg>
@@ -433,7 +473,7 @@
                             </div>
                         </div>
 
-                        <div class="card">
+                        <div class="card ai-insight-card">
                             <div class="card-header">
                                 <div class="card-title">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
@@ -625,6 +665,18 @@
                                 <li data-i18n="genai.privacy_5">When the master switch is off, active calls are cancelled and the provider connection pool and dispatcher are destroyed.</li>
                                 <li data-i18n="genai.privacy_6">Requests re-evaluate the OverDrive proxy route each time. If a Tailscale proxy is expected but unavailable, the request fails closed instead of dialing directly.</li>
                             </ul>
+                            <div class="setting-row">
+                                <div class="setting-info">
+                                    <div class="setting-name">Learn my routines locally</div>
+                                    <div class="setting-desc">Opt-in. Stores only bounded climate and sunshade action patterns on this vehicle. No provider call is used, and accepted suggestions save as manual-only automations.</div>
+                                </div>
+                                <div class="setting-control">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="genAiRoutineLearningEnabled">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
                             <div class="ai-runtime-grid">
                                 <div class="ai-runtime-item"><span data-i18n="genai.runtime_parked">Parked availability</span><strong id="genAiParked">—</strong></div>
                                 <div class="ai-runtime-item"><span data-i18n="genai.runtime_transport">Current transport</span><strong id="genAiTransport">—</strong></div>
@@ -632,6 +684,8 @@
                                 <div class="ai-runtime-item"><span data-i18n="genai.runtime_active">Active requests</span><strong id="genAiActiveRequests">0</strong></div>
                             </div>
                             <div class="ai-actions">
+                                <button class="btn btn-primary" id="genAiRoutineSaveBtn" type="button" onclick="GenAI.saveRoutineSettings()">Save routine setting</button>
+                                <button class="btn btn-secondary" id="genAiRoutineResetBtn" type="button" onclick="GenAI.resetRoutineLearning()">Reset learned patterns</button>
                                 <button class="btn btn-danger" type="button" onclick="GenAI.clearCredentials()" data-i18n="genai.clear">Disable and clear API key</button>
                             </div>
                         </div>
@@ -645,9 +699,9 @@
     <div id="toastContainer" class="toast-container"></div>
 
     <script src="../shared/auth.js"></script>
-    <script src="../shared/core.js?v=20"></script>
+    <script src="../shared/core.js?v=21"></script>
     <script src="../shared/update-flow.js"></script>
-    <script src="../shared/genai.js?v=10"></script>
+    <script src="../shared/genai.js?v=12"></script>
     <script>
         function toggleSidebar() {
             var sidebar = document.getElementById('sidebar');
